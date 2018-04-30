@@ -9,23 +9,28 @@ namespace EMedia
 {
     class RSA
     {
-        public static long square(long s)
+        public static long Square(long s)
         {
             return (s * s);
         }
 
         public static long Mod(int e, int p, int q)
         {
-            if(p==0)
+            if (p == 0)
             {
                 return 1;
             }
-            else if(p%2==0)
+            else if (p % 2 == 0)
             {
-                return square(Mod(e, p / 2, q)) % q;
+                return Square(Mod(e, p / 2, q)) % q;
             }
             else
-                return ((e%q) * Mod(e, p-1,q)) % q;
+                return ((e % q) * Mod(e, p - 1, q)) % q;
+        }
+
+        public static int N_val(int parameter1, int paramater2)
+        {
+            return (parameter1 * paramater2);
         }
     }
 }
